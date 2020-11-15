@@ -1,0 +1,67 @@
+1. SETUP
+
+[PC]
+$ roscore
+
+[TURTLE3]
+$ roslaunch turtlebot3_bringup turtlebot3_robot.launch
+
+
+[PC]
+
+burger, waffle, waffle_pi
+
+$ export TURTLEBOT3_MODEL=waffle
+
+$ roslaunch turtlebot3_bringup turtlebot3_remote.launch
+
+$ rosrun rviz rviz -d `rospack find turtlebot3_description`/rviz/model.rviz
+
+
+2. TELE OPERATION
+
+$ export TURTLEBOT3_MODEL=%{TB3_MODEL}
+
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+
+3. BASIC Examples
+
+1) Move using Interactive Markers
+
+$ export TURTLEBOT3_MODEL=${TB3_MODEL}
+
+$ roslaunch turtlebot3_bringup turtlebot3_remote.launch
+
+$ roslaunch turtlebot3_example interactive_markers.launch
+
+$ rosrun rviz rviz -d `rospack find turtlebot3_example`/rviz/turtlebot3_interactive.rviz
+
+$ roslaunch turtlebot3_example turtlebot3_obstacle.launch
+
+
+2) Obstacle Detection
+
+$ roslaunch turtlebot3_example turtlebot3_obstacle.launch
+
+
+3) Point Operation
+
+$ roslaunch turtlebot3_example turtlebot3_pointop_key.launch
+
+4) Patrol
+
+$ rosrun turtlebot3_example turtlebot3_server
+
+$ roslaunch turtlebot3_example turtlebot3_client.launch
+
+
+------------------------------------
+
+
+
+
+
+
+
+
